@@ -41,11 +41,9 @@ const LINK_STYLES = {
 export function Header({ profile }: HeaderProps) {
   if (!profile) return null;
 
-  const contactInfo = [
-    profile.address,
-    profile.phone,
-    profile.email,
-  ].filter(Boolean).join(" • ");
+  const contactInfo = [profile.address, profile.phone, profile.email]
+    .filter(Boolean)
+    .join(" • ");
 
   return (
     <Card sx={HEADER_CARD_STYLES}>
@@ -92,4 +90,3 @@ export function Header({ profile }: HeaderProps) {
     </Card>
   );
 }
-
