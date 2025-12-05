@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout() {
   return (
     <Box
       sx={{
@@ -36,7 +37,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           }}
         >
           <Box sx={{ maxWidth: "1400px", width: "100%", mx: "auto" }}>
-            {children}
+            <Outlet />
           </Box>
         </Box>
       </Box>

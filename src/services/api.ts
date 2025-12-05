@@ -213,3 +213,30 @@ export const cvApi = {
     };
   },
 };
+
+// Auth API
+export interface SignInRequest {
+  email: string;
+  password: string;
+  remember_me?: boolean;
+}
+
+export interface SignInResponse {
+  user: {
+    id: number;
+    email: string;
+    name?: string;
+  };
+  token?: string;
+}
+
+export const authApi = {
+  signIn: async (data: SignInRequest): Promise<SignInResponse> => {
+    const response = await axiosClient.post("/api/v1/auth/sign_in", {
+      email: data.email,
+      password: data.password,
+      remember_me: data.remember_me,
+    });
+    return response.data;
+  },
+};

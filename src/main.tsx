@@ -1,8 +1,10 @@
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-import React from "react";
 import ReactDOM from "react-dom/client";
+import { ErrorProvider } from "./contexts/ErrorContext";
+import { AxiosClientProvider } from "./libs/AxiosClientProvider";
+import ErrorModalProvider from "./libs/ErrorModalProvider";
 import AppRouter from "./router/AppRouter";
-
+import "./index.css";
 const theme = createTheme({
   palette: {
     mode: "light",
@@ -135,10 +137,13 @@ const theme = createTheme({
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <ErrorProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppRouter />
+      <AxiosClientProvider>
+        <AppRouter />
+      </AxiosClientProvider>
+      <ErrorModalProvider />
     </ThemeProvider>
-  </React.StrictMode>,
+  </ErrorProvider>,
 );
