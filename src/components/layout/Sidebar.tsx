@@ -15,7 +15,6 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
-  alpha,
 } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 
@@ -44,29 +43,28 @@ export default function Sidebar() {
         "& .MuiDrawer-paper": {
           width: drawerWidth,
           boxSizing: "border-box",
-          borderRight: "1px solid rgba(226, 232, 240, 0.5)",
-          backdropFilter: "blur(20px)",
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
-          boxShadow: "2px 0 8px rgba(0, 0, 0, 0.05)",
+          borderRight: "1px solid rgba(0, 0, 0, 0.06)",
+          backgroundColor: "#FFFFFF",
+          boxShadow: "2px 0 8px rgba(0, 0, 0, 0.04)",
           position: "relative",
         },
       }}
     >
-      <Box sx={{ p: 3, borderBottom: "1px solid rgba(226, 232, 240, 0.5)" }}>
+      <Box sx={{ p: 3, borderBottom: "1px solid rgba(0, 0, 0, 0.06)" }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Box
             sx={{
               width: 48,
               height: 48,
               borderRadius: 2,
-              background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+              backgroundColor: "#212121",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+              boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
             }}
           >
-            <BoltIcon sx={{ color: "white", fontSize: 28 }} />
+            <BoltIcon sx={{ color: "#FFFFFF", fontSize: 28 }} />
           </Box>
 
           <Box>
@@ -74,9 +72,7 @@ export default function Sidebar() {
               variant="h6"
               sx={{
                 fontWeight: 700,
-                background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "#212121",
               }}
             >
               Quang's Personal
@@ -104,13 +100,11 @@ export default function Sidebar() {
                     transition: "all 0.2s",
                     ...(isActive
                       ? {
-                          background:
-                            "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-                          color: "white",
-                          boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+                          backgroundColor: "#212121",
+                          color: "#FFFFFF",
+                          boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
                           "&:hover": {
-                            background:
-                              "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
+                            backgroundColor: "#424242",
                           },
                           "&::before": {
                             content: '""',
@@ -120,15 +114,14 @@ export default function Sidebar() {
                             transform: "translateY(-50%)",
                             width: 4,
                             height: 32,
-                            backgroundColor: "white",
+                            backgroundColor: "#212121",
                             borderRadius: "0 4px 4px 0",
                           },
                         }
                       : {
-                          color: "text.primary",
+                          color: "#212121",
                           "&:hover": {
-                            backgroundColor: alpha("#3b82f6", 0.08),
-                            color: "primary.main",
+                            backgroundColor: "rgba(0, 0, 0, 0.04)",
                             transform: "translateX(4px)",
                           },
                         }),
@@ -137,7 +130,7 @@ export default function Sidebar() {
                   <ListItemIcon
                     sx={{
                       minWidth: 40,
-                      color: isActive ? "white" : "inherit",
+                      color: isActive ? "#FFFFFF" : "#212121",
                       transition: "0.2s",
                       ...(isActive && { transform: "scale(1.1)" }),
                     }}

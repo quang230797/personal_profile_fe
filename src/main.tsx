@@ -1,30 +1,32 @@
 import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
-import React from "react";
 import ReactDOM from "react-dom/client";
+import { ErrorProvider } from "./contexts/ErrorContext";
+import { AxiosClientProvider } from "./libs/AxiosClientProvider";
+import ErrorModalProvider from "./libs/ErrorModalProvider";
 import AppRouter from "./router/AppRouter";
-
+import "./index.css";
 const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#3b82f6",
-      light: "#60a5fa",
-      dark: "#2563eb",
+      main: "#212121",
+      light: "#424242",
+      dark: "#000000",
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#6366f1",
-      light: "#818cf8",
-      dark: "#4f46e5",
+      main: "#757575",
+      light: "#9E9E9E",
+      dark: "#616161",
       contrastText: "#ffffff",
     },
     background: {
-      default: "linear-gradient(135deg, #f5f7fa 0%, #e8f0f8 50%, #e0e7ff 100%)",
+      default: "#FAFAFA",
       paper: "#ffffff",
     },
     text: {
-      primary: "#1e293b",
-      secondary: "#64748b",
+      primary: "#212121",
+      secondary: "#757575",
     },
     grey: {
       50: "#f8fafc",
@@ -93,9 +95,10 @@ const theme = createTheme({
           },
         },
         contained: {
-          background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+          backgroundColor: "#212121",
+          color: "#FFFFFF",
           "&:hover": {
-            background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
+            backgroundColor: "#424242",
           },
         },
       },
@@ -125,9 +128,8 @@ const theme = createTheme({
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          borderRight: "1px solid rgba(226, 232, 240, 0.5)",
-          backdropFilter: "blur(20px)",
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          borderRight: "1px solid rgba(0, 0, 0, 0.06)",
+          backgroundColor: "#FFFFFF",
         },
       },
     },
@@ -135,10 +137,13 @@ const theme = createTheme({
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <ErrorProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppRouter />
+      <AxiosClientProvider>
+        <AppRouter />
+      </AxiosClientProvider>
+      <ErrorModalProvider />
     </ThemeProvider>
-  </React.StrictMode>,
+  </ErrorProvider>,
 );

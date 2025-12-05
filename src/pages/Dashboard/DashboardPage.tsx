@@ -115,14 +115,13 @@ export default function DashboardPage() {
                       width: 40,
                       height: 40,
                       borderRadius: 1.5,
-                      backgroundColor: "primary.light",
-                      opacity: 0.1,
+                      backgroundColor: "#F5F5F5",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <TaskIcon sx={{ color: "primary.main", fontSize: 20 }} />
+                    <TaskIcon sx={{ color: "#212121", fontSize: 20 }} />
                   </Box>
                   <Box sx={{ flex: 1 }}>
                     <Typography variant="body2" fontWeight={500}>
@@ -156,10 +155,10 @@ function DashboardCard({
   trend?: string;
 }) {
   const colorMap = {
-    primary: "#3b82f6",
-    error: "#ef4444",
-    success: "#10b981",
-    warning: "#f59e0b",
+    primary: "#212121",
+    error: "#C62828",
+    success: "#2E7D32",
+    warning: "#F57C00",
   };
 
   return (
@@ -260,14 +259,13 @@ function ChartCard({
               width: 48,
               height: 48,
               borderRadius: 2,
-              backgroundColor: "primary.light",
-              opacity: 0.1,
+              backgroundColor: "#F5F5F5",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <Box sx={{ color: "primary.main" }}>{icon}</Box>
+            <Box sx={{ color: "#212121" }}>{icon}</Box>
           </Box>
         </Box>
         <Box

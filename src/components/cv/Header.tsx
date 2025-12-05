@@ -15,7 +15,7 @@ interface HeaderProps {
 
 const HEADER_CARD_STYLES = {
   mb: 4,
-  background: "linear-gradient(135deg, #3b82f6, #6366f1)",
+  backgroundColor: "#212121",
   color: "white",
 } as const;
 

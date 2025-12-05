@@ -7,7 +7,6 @@ import {
   Divider,
   Stack,
   Typography,
-  alpha,
 } from "@mui/material";
 import type { Experience } from "../../services/api";
 
@@ -31,8 +30,8 @@ const EXPERIENCE_ITEM_STYLES = {
 } as const;
 
 const PERIOD_CHIP_STYLES = {
-  backgroundColor: alpha("#6366f1", 0.1),
-  color: "secondary.main",
+  backgroundColor: "#F5F5F5",
+  color: "#212121",
   fontWeight: 600,
 } as const;
 

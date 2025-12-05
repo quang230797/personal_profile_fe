@@ -13,7 +13,6 @@ import {
   Box,
   IconButton,
   Avatar,
-  alpha,
   CircularProgress,
 } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -72,11 +71,12 @@ export default function NotePage() {
           variant="contained"
           startIcon={<AddIcon />}
           sx={{
-            background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+            backgroundColor: "#212121",
+            color: "#FFFFFF",
+            boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
             "&:hover": {
-              background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
-              boxShadow: "0 6px 16px rgba(59, 130, 246, 0.4)",
+              backgroundColor: "#424242",
+              boxShadow: "0 4px 12px rgba(33, 33, 33, 0.2)",
             },
           }}
         >
@@ -126,13 +126,13 @@ export default function NotePage() {
                       width: 48,
                       height: 48,
                       borderRadius: 2,
-                      backgroundColor: alpha("#6366f1", 0.1),
+                      backgroundColor: "#F5F5F5",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <NoteIcon sx={{ color: "secondary.main", fontSize: 24 }} />
+                    <NoteIcon sx={{ color: "#212121", fontSize: 24 }} />
                   </Box>
                   <IconButton size="small">
                     <MoreVertIcon />
@@ -163,9 +163,9 @@ export default function NotePage() {
                         px: 1.5,
                         py: 0.5,
                         borderRadius: 1,
-                        backgroundColor: alpha("#6366f1", 0.1),
+                        backgroundColor: "#F5F5F5",
                         fontSize: "0.75rem",
-                        color: "secondary.main",
+                        color: "#212121",
                         fontWeight: 500,
                       }}
                     >
@@ -215,11 +215,11 @@ export default function NotePage() {
                 sx={{
                   width: 64,
                   height: 64,
-                  backgroundColor: alpha("#6366f1", 0.1),
+                  backgroundColor: "#F5F5F5",
                   mb: 2,
                 }}
               >
-                <NoteIcon sx={{ fontSize: 32, color: "secondary.main" }} />
+                <NoteIcon sx={{ fontSize: 32, color: "#212121" }} />
               </Avatar>
               <Typography variant="h6" fontWeight={600} gutterBottom>
                 No notes yet

@@ -6,7 +6,6 @@ import {
   Chip,
   Divider,
   Typography,
-  alpha,
 } from "@mui/material";
 import type { Skill } from "../../services/api";
 
@@ -27,8 +26,8 @@ const SKILLS_CONTAINER_STYLES = {
 } as const;
 
 const SKILL_CHIP_STYLES = {
-  backgroundColor: alpha("#10b981", 0.1),
-  color: "success.main",
+  backgroundColor: "#F5F5F5",
+  color: "#212121",
   fontWeight: 600,
   px: 1.5,
   height: 30,

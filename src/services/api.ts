@@ -12,9 +12,9 @@ export interface DailyLog {
 export interface Task {
   id: number;
   title: string;
-  completed: boolean;
+  description: string;
   priority: "high" | "medium" | "low";
-  due_date: string | null;
+  status: "backlog" | "in_progress" | "review" | "done";
   created_at: string;
   updated_at: string;
 }
@@ -139,8 +139,9 @@ export const dailyLogsApi = {
 
 // Tasks API
 export const tasksApi = {
-  getAll: async (): Promise<Task[]> => {
-    const response = await axiosClient.get("/api/v1/tasks");
+  getAll: async (searchParams?: URLSearchParams): Promise<Task[]> => {
+    const params = searchParams ? `?${searchParams.toString()}` : "";
+    const response = await axiosClient.get(`/api/v1/tasks/search${params}`);
     return response.data.tasks || [];
   },
   getById: async (id: number): Promise<Task> => {
@@ -149,9 +150,9 @@ export const tasksApi = {
   },
   create: async (data: {
     title: string;
-    completed?: boolean;
+    description?: string;
     priority?: string;
-    due_date?: string;
+    status?: string;
   }): Promise<Task> => {
     const response = await axiosClient.post("/api/v1/tasks", data);
     return response.data.task;
@@ -211,5 +212,32 @@ export const cvApi = {
       projects: cvProfile?.projects || [],
       education: cvProfile?.education || null,
     };
+  },
+};
+
+// Auth API
+export interface SignInRequest {
+  email: string;
+  password: string;
+  remember_me?: boolean;
+}
+
+export interface SignInResponse {
+  user: {
+    id: number;
+    email: string;
+    name?: string;
+  };
+  token?: string;
+}
+
+export const authApi = {
+  signIn: async (data: SignInRequest): Promise<SignInResponse> => {
+    const response = await axiosClient.post("/api/v1/auth/sign_in", {
+      email: data.email,
+      password: data.password,
+      remember_me: data.remember_me,
+    });
+    return response.data;
   },
 };
