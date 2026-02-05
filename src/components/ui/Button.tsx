@@ -44,11 +44,12 @@ export function Button({
         px: 3,
         py: 1.5,
         ...(variant === "primary" && {
-          background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-          boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+          backgroundColor: "#212121",
+          color: "#FFFFFF",
+          boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
           "&:hover": {
-            background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
-            boxShadow: "0 6px 16px rgba(59, 130, 246, 0.4)",
+            backgroundColor: "#424242",
+            boxShadow: "0 4px 12px rgba(33, 33, 33, 0.2)",
             transform: "translateY(-1px)",
           },
         }),

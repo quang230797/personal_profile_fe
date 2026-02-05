@@ -1,16 +1,15 @@
 import { Box } from "@mui/material";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import Topbar from "./Topbar";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout() {
   return (
     <Box
       sx={{
         display: "flex",
         height: "100vh",
         overflow: "hidden",
-        background:
-          "linear-gradient(135deg, #f5f7fa 0%, #e8f0f8 50%, #e0e7ff 100%)",
+        backgroundColor: "#FAFAFA",
       }}
     >
       <Sidebar />
@@ -24,7 +23,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           width: "calc(100% - 280px)",
         }}
       >
-        <Topbar />
         <Box
           sx={{
             flex: 1,
@@ -36,7 +34,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           }}
         >
           <Box sx={{ maxWidth: "1400px", width: "100%", mx: "auto" }}>
-            {children}
+            <Outlet />
           </Box>
         </Box>
       </Box>

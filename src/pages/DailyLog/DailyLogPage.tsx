@@ -12,7 +12,6 @@ import {
   Stack,
   Chip,
   Avatar,
-  alpha,
   CircularProgress,
 } from "@mui/material";
 import { useState, useEffect } from "react";
@@ -89,11 +88,12 @@ export default function DailyLogPage() {
           variant="contained"
           startIcon={<AddIcon />}
           sx={{
-            background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-            boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+            backgroundColor: "#212121",
+            color: "#FFFFFF",
+            boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
             "&:hover": {
-              background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
-              boxShadow: "0 6px 16px rgba(59, 130, 246, 0.4)",
+              backgroundColor: "#424242",
+              boxShadow: "0 4px 12px rgba(33, 33, 33, 0.2)",
             },
           }}
         >
@@ -130,10 +130,10 @@ export default function DailyLogPage() {
                         sx={{
                           width: 48,
                           height: 48,
-                          backgroundColor: alpha("#3b82f6", 0.1),
+                          backgroundColor: "#F5F5F5",
                         }}
                       >
-                        <AccessTimeIcon sx={{ color: "primary.main" }} />
+                        <AccessTimeIcon sx={{ color: "#212121" }} />
                       </Avatar>
                       <Box sx={{ flex: 1 }}>
                         <Box
@@ -148,8 +148,8 @@ export default function DailyLogPage() {
                             label={log.time}
                             size="small"
                             sx={{
-                              backgroundColor: alpha("#3b82f6", 0.1),
-                              color: "primary.main",
+                              backgroundColor: "#F5F5F5",
+                              color: "#212121",
                               fontWeight: 600,
                             }}
                           />
@@ -189,11 +189,11 @@ export default function DailyLogPage() {
                 sx={{
                   width: 64,
                   height: 64,
-                  backgroundColor: alpha("#3b82f6", 0.1),
+                  backgroundColor: "#F5F5F5",
                   mb: 2,
                 }}
               >
-                <AccessTimeIcon sx={{ fontSize: 32, color: "primary.main" }} />
+                <AccessTimeIcon sx={{ fontSize: 32, color: "#212121" }} />
               </Avatar>
               <Typography variant="h6" fontWeight={600} gutterBottom>
                 No logs yet

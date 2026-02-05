@@ -7,7 +7,6 @@ import {
   Divider,
   Stack,
   Typography,
-  alpha,
 } from "@mui/material";
 import type { Project } from "../../services/api";
 
@@ -33,18 +32,18 @@ const CHIP_CONTAINER_STYLES = {
 } as const;
 
 const TECHNOLOGY_CHIP_STYLES = {
-  backgroundColor: alpha("#6366f1", 0.1),
-  color: "secondary.main",
+  backgroundColor: "#F5F5F5",
+  color: "#212121",
 } as const;
 
 const TEAM_SIZE_CHIP_STYLES = {
-  backgroundColor: alpha("#3b82f6", 0.1),
-  color: "primary.main",
+  backgroundColor: "#F5F5F5",
+  color: "#212121",
 } as const;
 
 const POSITION_CHIP_STYLES = {
-  backgroundColor: alpha("#10b981", 0.1),
-  color: "success.main",
+  backgroundColor: "#F5F5F5",
+  color: "#212121",
 } as const;
 
 export function Project({ projects }: ProjectProps) {

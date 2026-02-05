@@ -20,7 +20,6 @@ import {
   Badge,
   Typography,
   Divider,
-  alpha,
 } from "@mui/material";
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -37,10 +36,9 @@ export default function Topbar() {
       position="sticky"
       elevation={0}
       sx={{
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(226, 232, 240, 0.5)",
-        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)",
+        backgroundColor: "#FFFFFF",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
+        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.04)",
         zIndex: 10,
       }}
     >
@@ -76,17 +74,17 @@ export default function Topbar() {
               pl: 5,
               pr: 2,
               py: 1.5,
-              backgroundColor: "grey.50",
+              backgroundColor: "#FAFAFA",
               border: "1px solid",
-              borderColor: searchFocused ? "primary.main" : "grey.200",
+              borderColor: searchFocused ? "#212121" : "#E0E0E0",
               borderRadius: 2,
               transition: "all 0.2s ease",
               "&:hover": {
-                borderColor: "primary.light",
+                borderColor: "#BDBDBD",
               },
               "&.Mui-focused": {
-                borderColor: "primary.main",
-                boxShadow: `0 0 0 3px ${alpha("#3b82f6", 0.1)}`,
+                borderColor: "#212121",
+                boxShadow: "0 0 0 3px rgba(33, 33, 33, 0.1)",
               },
               "& input::placeholder": {
                 color: "text.secondary",
@@ -99,10 +97,10 @@ export default function Topbar() {
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <IconButton
             sx={{
-              color: "text.secondary",
+              color: "#757575",
               "&:hover": {
-                backgroundColor: alpha("#3b82f6", 0.08),
-                color: "primary.main",
+                backgroundColor: "rgba(0, 0, 0, 0.04)",
+                color: "#212121",
               },
             }}
           >
@@ -117,11 +115,12 @@ export default function Topbar() {
             variant="contained"
             startIcon={<AddIcon />}
             sx={{
-              background: "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
-              boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+              backgroundColor: "#212121",
+              color: "#FFFFFF",
+              boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
               "&:hover": {
-                background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
-                boxShadow: "0 6px 16px rgba(59, 130, 246, 0.4)",
+                backgroundColor: "#424242",
+                boxShadow: "0 4px 12px rgba(33, 33, 33, 0.2)",
                 transform: "translateY(-1px)",
               },
               transition: "all 0.2s ease",
@@ -157,7 +156,7 @@ export default function Topbar() {
               sx={{
                 py: 1.5,
                 "&:hover": {
-                  backgroundColor: alpha("#3b82f6", 0.08),
+                  backgroundColor: "rgba(0, 0, 0, 0.04)",
                 },
               }}
             >
@@ -166,14 +165,14 @@ export default function Topbar() {
                   width: 40,
                   height: 40,
                   borderRadius: 1.5,
-                  backgroundColor: alpha("#3b82f6", 0.1),
+                  backgroundColor: "#F5F5F5",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   mr: 2,
                 }}
               >
-                <TaskIcon sx={{ color: "primary.main", fontSize: 20 }} />
+                <TaskIcon sx={{ color: "#212121", fontSize: 20 }} />
               </Box>
               <Box>
                 <Typography variant="body2" fontWeight={600}>
@@ -192,7 +191,7 @@ export default function Topbar() {
               sx={{
                 py: 1.5,
                 "&:hover": {
-                  backgroundColor: alpha("#6366f1", 0.08),
+                  backgroundColor: "rgba(0, 0, 0, 0.04)",
                 },
               }}
             >
@@ -201,14 +200,14 @@ export default function Topbar() {
                   width: 40,
                   height: 40,
                   borderRadius: 1.5,
-                  backgroundColor: alpha("#6366f1", 0.1),
+                  backgroundColor: "#F5F5F5",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   mr: 2,
                 }}
               >
-                <NoteIcon sx={{ color: "secondary.main", fontSize: 20 }} />
+                <NoteIcon sx={{ color: "#212121", fontSize: 20 }} />
               </Box>
               <Box>
                 <Typography variant="body2" fontWeight={600}>
@@ -238,7 +237,7 @@ export default function Topbar() {
               variant="dot"
               sx={{
                 "& .MuiBadge-badge": {
-                  backgroundColor: "#10b981",
+                  backgroundColor: "#212121",
                   border: "2px solid white",
                 },
               }}
@@ -247,9 +246,8 @@ export default function Topbar() {
                 sx={{
                   width: 40,
                   height: 40,
-                  background:
-                    "linear-gradient(135deg, #60a5fa 0%, #6366f1 100%)",
-                  boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+                  backgroundColor: "#212121",
+                  boxShadow: "0 2px 8px rgba(33, 33, 33, 0.15)",
                 }}
               >
                 QN
@@ -281,9 +279,9 @@ export default function Topbar() {
               sx={{
                 px: 2,
                 py: 1.5,
-                background: "linear-gradient(135deg, #e0e7ff 0%, #dbeafe 100%)",
+                backgroundColor: "#FAFAFA",
                 borderBottom: "1px solid",
-                borderColor: "divider",
+                borderColor: "rgba(0, 0, 0, 0.06)",
               }}
             >
               <Typography variant="body2" fontWeight={600}>
@@ -300,13 +298,11 @@ export default function Topbar() {
               sx={{
                 py: 1.5,
                 "&:hover": {
-                  backgroundColor: alpha("#3b82f6", 0.08),
+                  backgroundColor: "rgba(0, 0, 0, 0.04)",
                 },
               }}
             >
-              <PersonIcon
-                sx={{ mr: 2, fontSize: 20, color: "text.secondary" }}
-              />
+              <PersonIcon sx={{ mr: 2, fontSize: 20, color: "#757575" }} />
               <Typography variant="body2">My Profile</Typography>
             </MenuItem>
             <Divider />
@@ -317,9 +313,9 @@ export default function Topbar() {
               }}
               sx={{
                 py: 1.5,
-                color: "error.main",
+                color: "#C62828",
                 "&:hover": {
-                  backgroundColor: alpha("#ef4444", 0.08),
+                  backgroundColor: "rgba(198, 40, 40, 0.08)",
                 },
               }}
             >
